@@ -6,47 +6,42 @@
 <title>এসটি এসি সার্ভিস | AC Repair & Service Dhaka</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
   :root {
-    --navy: #0B1E33;
-    --navy-mid: #132840;
-    --navy-light: #1A3A55;
-    --blue: #0A7FD4;
-    --blue-bright: #1A9FFF;
-    --cyan: #00C4A7;
-    --cyan-light: #E0FAF6;
+    --primary: #0A7FD4;
+    --primary-dark: #0562A8;
+    --primary-light: #E8F4FD;
+    --accent: #00C4A7;
+    --accent-light: #E0FAF6;
     --warm: #FF6B35;
     --warm-light: #FFF0EB;
-    --gold: #F5A623;
     --white: #FFFFFF;
-    --off-white: #F4F8FC;
-    --grey-50: #EDF3F9;
-    --grey-100: #D8E8F5;
-    --grey-200: #B0CCDF;
-    --grey-500: #5A8099;
-    --grey-700: #2C4A60;
-    --text: #0B1E33;
-    --text-mid: #2C4A60;
-    --text-light: #5A8099;
+    --off-white: #F7FBFF;
+    --grey-50: #F0F6FC;
+    --grey-100: #E1EDF8;
+    --grey-200: #C3D9EF;
+    --grey-400: #7FA8C9;
+    --grey-600: #4A6E8A;
+    --grey-800: #1E3A50;
+    --text: #0F2639;
+    --text-light: #4A6E8A;
     --whatsapp: #25D366;
     --whatsapp-dark: #128C7E;
-
-    --shadow-sm: 0 2px 12px rgba(10,127,212,0.08);
-    --shadow-md: 0 8px 32px rgba(10,127,212,0.14);
+    --shadow-sm: 0 2px 8px rgba(10,127,212,0.08);
+    --shadow-md: 0 8px 32px rgba(10,127,212,0.12);
     --shadow-lg: 0 20px 60px rgba(10,127,212,0.18);
-    --shadow-dark: 0 12px 40px rgba(11,30,51,0.25);
-
-    --radius: 18px;
-    --radius-sm: 12px;
-    --radius-xs: 8px;
+    --radius: 16px;
+    --radius-sm: 10px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   html { scroll-behavior: smooth; }
+
   body {
-    font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+    font-family: 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
     color: var(--text);
     background: var(--white);
     overflow-x: hidden;
@@ -54,68 +49,60 @@
 
   /* ─── ANIMATIONS ─── */
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(28px); }
+    from { opacity: 0; transform: translateY(30px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
   @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-16px); }
+    from { opacity: 0; transform: translateY(-20px); }
     to   { opacity: 1; transform: translateY(0); }
   }
   @keyframes pulse-ring {
-    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.55); }
-    70%  { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
-    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    0%   { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+    70%  { transform: scale(1.05); box-shadow: 0 0 0 18px rgba(37,211,102,0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0); }
   }
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(-10px); }
+    50%       { transform: translateY(-8px); }
   }
   @keyframes snowfall {
     0%   { transform: translateY(-20px) rotate(0deg); opacity: 0; }
-    10%  { opacity: 0.4; }
-    90%  { opacity: 0.15; }
+    10%  { opacity: 0.6; }
+    90%  { opacity: 0.3; }
     100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
   }
   @keyframes shimmer {
     0%   { background-position: -200% center; }
     100% { background-position: 200% center; }
   }
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
   }
-  @keyframes ripple {
-    0%   { transform: scale(1); opacity: 0.6; }
-    100% { transform: scale(2.2); opacity: 0; }
+  @keyframes wave {
+    0%, 100% { transform: scaleY(1); }
+    50%       { transform: scaleY(1.4); }
   }
 
-  .animate-fadeup { animation: fadeUp 0.75s cubic-bezier(.16,1,.3,1) both; }
+  .animate-fadeup { animation: fadeUp 0.7s ease both; }
   .delay-1 { animation-delay: 0.1s; }
-  .delay-2 { animation-delay: 0.22s; }
-  .delay-3 { animation-delay: 0.38s; }
-  .delay-4 { animation-delay: 0.52s; }
-  .delay-5 { animation-delay: 0.68s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.35s; }
+  .delay-4 { animation-delay: 0.5s; }
+  .delay-5 { animation-delay: 0.65s; }
 
   .scroll-reveal {
     opacity: 0;
-    transform: translateY(36px);
-    transition: opacity 0.65s cubic-bezier(.16,1,.3,1), transform 0.65s cubic-bezier(.16,1,.3,1);
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
   }
   .scroll-reveal.revealed {
     opacity: 1;
     transform: translateY(0);
-  }
-
-  /* ─── SNOWFLAKES ─── */
-  .snowflake {
-    position: fixed;
-    top: -30px;
-    color: rgba(100,180,255,0.18);
-    font-size: 12px;
-    animation: snowfall linear infinite;
-    pointer-events: none;
-    user-select: none;
-    z-index: 0;
   }
 
   /* ─── NAVBAR ─── */
@@ -123,14 +110,15 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1000;
-    background: rgba(11,30,51,0.97);
-    backdrop-filter: blur(24px);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--grey-100);
     padding: 0 20px;
-    height: 62px;
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 2px 20px rgba(10,127,212,0.08);
     animation: slideDown 0.5s ease both;
   }
 
@@ -140,33 +128,40 @@
     gap: 10px;
     text-decoration: none;
   }
+
   .nav-logo {
-    width: 38px; height: 38px;
-    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-family: 'Sora', sans-serif;
     font-weight: 800;
-    font-size: 13px;
-    box-shadow: 0 4px 14px rgba(10,127,212,0.45);
-  }
-  .nav-name {
     font-size: 14px;
+    letter-spacing: -0.5px;
+    box-shadow: 0 4px 12px rgba(10,127,212,0.3);
+  }
+
+  .nav-name {
+    font-size: 15px;
     font-weight: 700;
-    color: white;
+    color: var(--text);
     line-height: 1.2;
   }
   .nav-name span {
     display: block;
     font-size: 10px;
     font-weight: 400;
-    color: rgba(255,255,255,0.45);
-    letter-spacing: 0.3px;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
   }
-  .nav-actions { display: flex; gap: 8px; align-items: center; }
+
+  .nav-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
 
   .btn-whatsapp-nav {
     background: var(--whatsapp);
@@ -175,22 +170,22 @@
     border-radius: 30px;
     text-decoration: none;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
     display: flex;
     align-items: center;
     gap: 5px;
     transition: all 0.2s;
     white-space: nowrap;
-    letter-spacing: 0.2px;
   }
   .btn-whatsapp-nav:hover {
     background: var(--whatsapp-dark);
     transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(37,211,102,0.4);
+    box-shadow: 0 4px 12px rgba(37,211,102,0.4);
   }
+
   .btn-call-nav {
-    background: rgba(255,255,255,0.1);
-    color: white;
+    background: var(--primary-light);
+    color: var(--primary);
     padding: 8px 14px;
     border-radius: 30px;
     text-decoration: none;
@@ -199,187 +194,148 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    border: 1px solid rgba(255,255,255,0.15);
     transition: all 0.2s;
     white-space: nowrap;
   }
   .btn-call-nav:hover {
-    background: rgba(255,255,255,0.18);
+    background: var(--primary);
+    color: white;
     transform: translateY(-1px);
   }
 
   /* ─── HERO ─── */
   .hero {
-    min-height: 100svh;
-    padding-top: 62px;
+    min-height: 100vh;
+    padding-top: 64px;
+    background: linear-gradient(160deg, #EBF6FF 0%, #F0FBFA 40%, #F7FBFF 100%);
     position: relative;
     overflow: hidden;
-    background: var(--navy);
     display: flex;
-    align-items: stretch;
-    @media (max-width: 768px) {
-  .hero {
-    min-height: 85vh;
-  }
-}
+    align-items: center;
   }
 
-  /* Full background image with dark overlay */
-  .hero-bg img {
-  object-fit: cover;
-  object-position: left center;
-}
-  .hero-bg img {
-  object-fit: cover;
-  object-position: left center;
-}
+  /* Snowflake particles */
+  .snowflake {
     position: absolute;
-    inset: 0;
-    background: url('https://i.ibb.co/0Ryfv6FP/hero.png') no-repeat left center / cover;
-    z-index: 0;
-  }
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      105deg,
-    rgba(11,30,51,0.92) 0%,
-    rgba(11,30,51,0.75) 40%,
-    rgba(11,30,51,0.25) 70%,
-    rgba(11,30,51,0.05) 100%
-    );
+    top: -30px;
+    color: rgba(10,127,212,0.15);
+    font-size: 12px;
+    animation: snowfall linear infinite;
+    pointer-events: none;
+    user-select: none;
   }
 
-  /* Subtle grid texture */
+  /* Background decorative circles */
+  .hero-bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero-bg-circle-1 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(10,127,212,0.07) 0%, transparent 70%);
+    top: -150px; right: -150px;
+  }
+  .hero-bg-circle-2 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0,196,167,0.08) 0%, transparent 70%);
+    bottom: 50px; left: -80px;
+  }
+
+  /* Grid pattern */
   .hero::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(10,127,212,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(10,127,212,0.05) 1px, transparent 1px);
-    background-size: 48px 48px;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  /* Decorative glow blob */
-  .hero-glow {
-    position: absolute;
-    width: 600px; height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(10,127,212,0.18) 0%, transparent 65%);
-    top: -120px; left: -160px;
-    z-index: 1;
-    pointer-events: none;
-  }
-  .hero-glow-2 {
-    position: absolute;
-    width: 400px; height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,196,167,0.12) 0%, transparent 65%);
-    bottom: 60px; right: -100px;
-    z-index: 1;
+      linear-gradient(rgba(10,127,212,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10,127,212,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
     pointer-events: none;
   }
 
   .hero-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 24px 72px;
+    padding: 60px 20px 80px;
     position: relative;
-    z-index: 2;
+    z-index: 1;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: calc(100svh - 62px);
   }
 
-  /* Live badge */
   .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
+    gap: 6px;
+    background: white;
+    border: 1.5px solid var(--grey-100);
     border-radius: 30px;
     padding: 6px 14px;
     font-size: 12px;
     font-weight: 600;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 22px;
-    width: fit-content;
+    color: var(--primary);
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
     animation: fadeUp 0.6s ease both;
-    backdrop-filter: blur(8px);
   }
   .hero-badge .dot {
     width: 7px; height: 7px;
-    background: var(--cyan);
+    background: var(--accent);
     border-radius: 50%;
-    animation: blink 1.8s ease-in-out infinite;
-    flex-shrink: 0;
+    animation: wave 1.5s ease-in-out infinite;
   }
 
   .hero-headline {
-    font-family: 'Noto Sans Bengali', sans-serif;
-    font-size: clamp(34px, 7vw, 62px);
+    font-size: clamp(32px, 6vw, 58px);
     font-weight: 800;
-    line-height: 1.12;
-    color: white;
-    margin-bottom: 10px;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 8px;
     animation: fadeUp 0.7s ease both 0.1s;
-    letter-spacing: -0.5px;
-  }
-  .hero-headline .urgent {
-    color: var(--warm);
-    display: block;
   }
   .hero-headline .highlight {
-    background: linear-gradient(120deg, var(--blue-bright), var(--cyan));
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+  .hero-headline .urgent {
+    color: var(--warm);
+  }
 
   .hero-sub {
-    font-size: clamp(15px, 2.2vw, 18px);
-    color: rgba(255,255,255,0.72);
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: var(--text-light);
     font-weight: 400;
-    margin-bottom: 18px;
-    line-height: 1.75;
-    max-width: 540px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    max-width: 600px;
     animation: fadeUp 0.7s ease both 0.2s;
   }
 
-  /* Rating pill */
   .hero-rating {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.18);
+    gap: 8px;
+    background: white;
     border-radius: 12px;
-    padding: 10px 16px;
-    margin-bottom: 28px;
+    padding: 10px 18px;
+    box-shadow: var(--shadow-sm);
+    border: 1.5px solid var(--grey-100);
+    margin-bottom: 32px;
     animation: fadeUp 0.7s ease both 0.3s;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-    color: white;
-    backdrop-filter: blur(8px);
-    width: fit-content;
   }
-  .hero-rating .stars { color: #FBBF24; letter-spacing: 1px; }
-  .hero-rating .count { color: rgba(255,255,255,0.55); font-weight: 400; }
+  .hero-rating .stars { color: #FBBF24; letter-spacing: 2px; }
+  .hero-rating .count { color: var(--text-light); font-weight: 400; }
 
-  /* CTA Buttons */
   .hero-buttons {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
     animation: fadeUp 0.7s ease both 0.4s;
-    margin-bottom: 36px;
+    margin-bottom: 40px;
   }
 
   .btn-primary {
@@ -394,18 +350,17 @@
     align-items: center;
     gap: 8px;
     transition: all 0.25s;
-    box-shadow: 0 6px 24px rgba(37,211,102,0.4);
-    letter-spacing: 0.2px;
+    box-shadow: 0 6px 20px rgba(37,211,102,0.35);
   }
   .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(37,211,102,0.5);
-    background: #20c95b;
+    box-shadow: 0 12px 30px rgba(37,211,102,0.45);
+    background: #1ebd57;
   }
 
   .btn-secondary {
-    background: rgba(255,255,255,0.1);
-    color: white;
+    background: white;
+    color: var(--primary);
     padding: 16px 28px;
     border-radius: 50px;
     text-decoration: none;
@@ -415,120 +370,99 @@
     align-items: center;
     gap: 8px;
     transition: all 0.25s;
-    border: 1.5px solid rgba(255,255,255,0.3);
-    backdrop-filter: blur(8px);
+    border: 2px solid var(--primary);
+    box-shadow: var(--shadow-sm);
   }
   .btn-secondary:hover {
-    background: rgba(255,255,255,0.18);
+    background: var(--primary);
+    color: white;
     transform: translateY(-3px);
-    border-color: rgba(255,255,255,0.5);
+    box-shadow: 0 12px 30px rgba(10,127,212,0.3);
   }
 
-  /* Trust micro-badges */
-  .hero-trust-row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    font-size: 13px;
-    color: rgba(255,255,255,0.6);
-    animation: fadeUp 0.7s ease both 0.55s;
+  /* AC illustration */
+  .hero-visual {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: float 4s ease-in-out infinite;
+    opacity: 0.9;
   }
-  .hero-trust-row span {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .hero-trust-row i { color: var(--cyan); font-size: 12px; }
 
   /* ─── TRUST BAR ─── */
   .trust-bar {
-    background: linear-gradient(90deg, var(--navy-mid) 0%, var(--navy-light) 100%);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 22px 20px;
+    background: var(--primary);
+    padding: 20px 20px;
   }
+
   .trust-bar-inner {
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0;
+    gap: 16px;
   }
+
   .trust-stat {
     text-align: center;
     color: white;
-    padding: 8px 12px;
-    border-right: 1px solid rgba(255,255,255,0.08);
-  }
-  .trust-stat:last-child { border-right: none; }
-  .trust-stat .icon {
-    font-size: 20px;
-    margin-bottom: 6px;
-    display: block;
-    color: var(--cyan);
   }
   .trust-stat .number {
-    font-family: 'Sora', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 800;
     display: block;
-    line-height: 1;
-    margin-bottom: 4px;
-    background: linear-gradient(120deg, var(--blue-bright), var(--cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
   .trust-stat .label {
     font-size: 11px;
-    opacity: 0.55;
+    opacity: 0.8;
     font-weight: 400;
     display: block;
+    margin-top: 2px;
+  }
+  .trust-stat .icon {
+    font-size: 18px;
+    margin-bottom: 4px;
+    display: block;
+    opacity: 0.9;
   }
 
-  /* ─── SECTIONS ─── */
-  section { padding: 72px 20px; }
-  .container { max-width: 1100px; margin: 0 auto; }
+  /* ─── SECTION COMMON ─── */
+  section { padding: 70px 20px; }
 
   .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+    display: inline-block;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--blue);
-    background: linear-gradient(135deg, rgba(10,127,212,0.1), rgba(0,196,167,0.1));
+    color: var(--primary);
+    background: var(--primary-light);
     padding: 5px 14px;
     border-radius: 20px;
-    margin-bottom: 14px;
-    border: 1px solid rgba(10,127,212,0.15);
-  }
-  .section-label::before {
-    content: '';
-    width: 6px; height: 6px;
-    background: var(--cyan);
-    border-radius: 50%;
+    margin-bottom: 12px;
   }
 
   .section-title {
-    font-family: 'Noto Sans Bengali', sans-serif;
     font-size: clamp(24px, 4vw, 38px);
     font-weight: 800;
     color: var(--text);
-    line-height: 1.22;
+    line-height: 1.2;
     margin-bottom: 12px;
-    letter-spacing: -0.3px;
   }
-  .section-title .accent { color: var(--blue); }
+  .section-title .accent { color: var(--primary); }
 
   .section-sub {
     font-size: 16px;
     color: var(--text-light);
-    max-width: 540px;
-    line-height: 1.75;
-    margin-bottom: 44px;
+    max-width: 550px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
   /* ─── SERVICES ─── */
@@ -536,82 +470,81 @@
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
   }
 
   .service-card {
     background: white;
     border-radius: var(--radius);
-    padding: 28px 26px;
+    padding: 28px 24px;
     border: 1.5px solid var(--grey-100);
-    transition: all 0.3s cubic-bezier(.16,1,.3,1);
+    transition: all 0.3s ease;
     cursor: default;
     position: relative;
     overflow: hidden;
   }
-  .service-card::after {
+  .service-card::before {
     content: '';
     position: absolute;
-    bottom: 0; left: 0; right: 0;
+    top: 0; left: 0; right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--blue), var(--cyan));
+    background: linear-gradient(90deg, var(--primary), var(--accent));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
-    border-radius: 0 0 2px 2px;
   }
   .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
-    border-color: rgba(10,127,212,0.15);
+    border-color: var(--grey-200);
   }
-  .service-card:hover::after { transform: scaleX(1); }
+  .service-card:hover::before { transform: scaleX(1); }
 
   .service-icon {
-    width: 54px; height: 54px;
+    width: 52px; height: 52px;
     border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    margin-bottom: 18px;
-    background: linear-gradient(135deg, rgba(10,127,212,0.1), rgba(0,196,167,0.1));
-    color: var(--blue);
+    font-size: 22px;
+    margin-bottom: 16px;
+    background: var(--primary-light);
+    color: var(--primary);
     transition: all 0.3s;
-    border: 1px solid rgba(10,127,212,0.12);
   }
   .service-card:hover .service-icon {
-    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    background: var(--primary);
     color: white;
-    border-color: transparent;
-    transform: scale(1.08);
+    transform: scale(1.1);
   }
 
   .service-name {
     font-size: 16px;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     color: var(--text);
   }
+
   .service-desc {
-    font-size: 13.5px;
+    font-size: 13px;
     color: var(--text-light);
-    line-height: 1.65;
-    margin-bottom: 18px;
+    line-height: 1.6;
+    margin-bottom: 16px;
   }
+
   .service-price {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    background: linear-gradient(135deg, rgba(10,127,212,0.08), rgba(0,196,167,0.08));
-    color: var(--blue);
+    background: var(--primary-light);
+    color: var(--primary);
     font-size: 13px;
     font-weight: 700;
-    padding: 6px 14px;
+    padding: 5px 12px;
     border-radius: 20px;
-    border: 1px solid rgba(10,127,212,0.15);
   }
+
   .service-badge-emergency {
     position: absolute;
     top: 16px; right: 16px;
@@ -620,321 +553,267 @@
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 1px;
-    padding: 3px 9px;
+    padding: 3px 8px;
     border-radius: 10px;
     text-transform: uppercase;
-    box-shadow: 0 2px 8px rgba(255,107,53,0.35);
-  }
-
-  /* Guarantee banner */
-  .guarantee-banner {
-    background: linear-gradient(135deg, rgba(0,196,167,0.08), rgba(10,127,212,0.06));
-    border: 1.5px solid rgba(0,196,167,0.25);
-    border-radius: var(--radius-sm);
-    padding: 16px 22px;
-    margin-top: 28px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    max-width: 620px;
-  }
-  .guarantee-banner i {
-    color: var(--cyan);
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-  .guarantee-banner span {
-    font-size: 13.5px;
-    color: var(--text-mid);
-    line-height: 1.6;
   }
 
   /* ─── WHY CHOOSE US ─── */
-  .why-section { background: white; }
-
   .why-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
   }
 
   .why-card {
-    background: var(--off-white);
+    background: white;
     border-radius: var(--radius);
-    padding: 26px;
+    padding: 24px;
     border: 1.5px solid var(--grey-100);
     display: flex;
-    gap: 18px;
+    gap: 16px;
     align-items: flex-start;
-    transition: all 0.3s cubic-bezier(.16,1,.3,1);
+    transition: all 0.3s;
   }
   .why-card:hover {
     box-shadow: var(--shadow-md);
-    border-color: rgba(10,127,212,0.2);
+    border-color: var(--primary);
     transform: translateY(-3px);
-    background: white;
   }
 
   .why-icon {
-    width: 46px; height: 46px;
-    min-width: 46px;
-    background: linear-gradient(135deg, var(--navy), var(--navy-light));
-    border-radius: 13px;
+    width: 44px; height: 44px;
+    min-width: 44px;
+    background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    color: var(--cyan);
-    box-shadow: 0 4px 14px rgba(11,30,51,0.25);
+    color: var(--primary);
   }
+
   .why-title {
     font-size: 15px;
     font-weight: 700;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     color: var(--text);
   }
   .why-desc {
-    font-size: 13.5px;
+    font-size: 13px;
     color: var(--text-light);
-    line-height: 1.65;
+    line-height: 1.6;
   }
 
   /* ─── HOW IT WORKS ─── */
-  .how-it-works {
-    background: var(--navy);
-    position: relative;
-    overflow: hidden;
-  }
-  .how-it-works::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(10,127,212,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(10,127,212,0.06) 1px, transparent 1px);
-    background-size: 50px 50px;
-    pointer-events: none;
-  }
-  .how-it-works .section-label { color: var(--cyan); background: rgba(0,196,167,0.1); border-color: rgba(0,196,167,0.2); }
-  .how-it-works .section-label::before { background: var(--blue-bright); }
-  .how-it-works .section-title { color: white; }
-  .how-it-works .section-sub { color: rgba(255,255,255,0.5); }
-  .how-it-works .accent { color: var(--cyan); }
+  .how-it-works { background: var(--off-white); }
 
   .steps {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 30px;
     position: relative;
   }
   .steps::before {
     content: '';
     position: absolute;
-    top: 44px;
-    left: calc(16.66% + 24px);
-    right: calc(16.66% + 24px);
-    height: 1px;
-    background: linear-gradient(90deg, var(--blue), var(--cyan));
-    opacity: 0.35;
+    top: 40px;
+    left: calc(16.66% + 20px);
+    right: calc(16.66% + 20px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    opacity: 0.3;
   }
 
-  .step { text-align: center; position: relative; }
+  .step {
+    text-align: center;
+    position: relative;
+  }
 
   .step-number {
-    width: 88px; height: 88px;
+    width: 80px; height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     color: white;
-    font-family: 'Sora', sans-serif;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 22px;
-    box-shadow: 0 8px 28px rgba(10,127,212,0.4);
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 24px rgba(10,127,212,0.3);
     position: relative;
     z-index: 1;
   }
+
   .step-icon-small {
-    font-size: 15px;
+    font-size: 14px;
     position: absolute;
     bottom: -4px; right: -4px;
-    background: var(--navy);
-    width: 28px; height: 28px;
+    background: white;
+    width: 26px; height: 26px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
+
   .step-title {
     font-size: 16px;
     font-weight: 700;
-    margin-bottom: 10px;
-    color: white;
+    margin-bottom: 8px;
   }
   .step-desc {
-    font-size: 13.5px;
-    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    color: var(--text-light);
     line-height: 1.7;
   }
 
   /* ─── SOCIAL PROOF ─── */
-  .reviews-section { background: var(--off-white); }
-
   .rating-banner {
-    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    background: linear-gradient(135deg, var(--primary), #0562A8);
     border-radius: var(--radius);
-    padding: 36px;
+    padding: 32px;
     text-align: center;
     color: white;
     margin-bottom: 40px;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.06);
   }
   .rating-banner::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 20% 50%, rgba(10,127,212,0.15) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 50%, rgba(0,196,167,0.1) 0%, transparent 50%);
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
-  .rating-banner > * { position: relative; z-index: 1; }
   .rating-banner .big-rating {
-    font-family: 'Sora', sans-serif;
-    font-size: 70px;
+    font-size: 64px;
     font-weight: 800;
     line-height: 1;
-    margin-bottom: 10px;
-    background: linear-gradient(135deg, var(--blue-bright), var(--cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    margin-bottom: 8px;
   }
-  .rating-banner .stars-row { font-size: 28px; color: #FBBF24; margin-bottom: 10px; }
-  .rating-banner .rating-sub { opacity: 0.65; font-size: 15px; }
+  .rating-banner .stars-row { font-size: 28px; color: #FBBF24; margin-bottom: 8px; }
+  .rating-banner .rating-sub { opacity: 0.85; font-size: 15px; }
 
   .testimonials {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
   }
 
   .testimonial-card {
     background: white;
     border-radius: var(--radius);
-    padding: 26px;
+    padding: 24px;
     border: 1.5px solid var(--grey-100);
-    transition: all 0.3s cubic-bezier(.16,1,.3,1);
+    transition: all 0.3s;
     position: relative;
-    overflow: hidden;
   }
   .testimonial-card::before {
     content: '"';
     position: absolute;
-    top: 12px; right: 18px;
-    font-size: 72px;
-    color: rgba(10,127,212,0.06);
-    font-family: Georgia, serif;
+    top: 16px; right: 20px;
+    font-size: 60px;
+    color: var(--primary-light);
+    font-family: serif;
     line-height: 1;
     font-weight: 900;
   }
   .testimonial-card:hover {
     box-shadow: var(--shadow-md);
     transform: translateY(-3px);
-    border-color: rgba(10,127,212,0.15);
   }
-  .test-stars { color: #FBBF24; font-size: 14px; margin-bottom: 12px; letter-spacing: 1px; }
+
+  .test-stars { color: #FBBF24; font-size: 14px; margin-bottom: 12px; }
   .test-text {
     font-size: 14px;
-    color: var(--text-mid);
-    line-height: 1.75;
-    margin-bottom: 18px;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 16px;
   }
-  .test-author { display: flex; align-items: center; gap: 12px; }
+  .test-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
   .test-avatar {
-    width: 40px; height: 40px;
+    width: 38px; height: 38px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--navy), var(--blue));
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     color: white;
-    flex-shrink: 0;
-    box-shadow: 0 3px 10px rgba(11,30,51,0.2);
   }
-  .test-name { font-size: 14px; font-weight: 700; color: var(--text); }
-  .test-loc { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+  .test-name { font-size: 14px; font-weight: 700; }
+  .test-loc { font-size: 12px; color: var(--text-light); }
 
-  /* ─── SERVICE AREAS ─── */
-  .areas { background: white; }
+  /* ─── AREAS ─── */
+  .areas { background: var(--off-white); }
 
   .areas-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
   }
+
   .area-tag {
-    background: var(--off-white);
-    border: 1.5px solid var(--grey-100);
+    background: white;
+    border: 1.5px solid var(--grey-200);
     border-radius: 30px;
     padding: 8px 18px;
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-mid);
+    color: var(--text);
     transition: all 0.2s;
     cursor: default;
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 6px;
   }
-  .area-tag i { color: var(--blue); font-size: 10px; }
+  .area-tag i { color: var(--primary); font-size: 11px; }
   .area-tag:hover {
-    background: var(--navy);
-    border-color: var(--navy);
+    background: var(--primary);
+    border-color: var(--primary);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(11,30,51,0.2);
+    box-shadow: 0 4px 12px rgba(10,127,212,0.25);
   }
-  .area-tag:hover i { color: var(--cyan); }
+  .area-tag:hover i { color: white; }
 
   /* ─── MID CTA ─── */
   .mid-cta {
-    background: linear-gradient(135deg, var(--navy) 0%, #0A2A45 50%, #0D3A58 100%);
+    background: linear-gradient(160deg, #EBF6FF 0%, #E0FAF6 100%);
+    border-top: 1px solid var(--grey-100);
+    border-bottom: 1px solid var(--grey-100);
     text-align: center;
-    padding: 72px 20px;
-    position: relative;
-    overflow: hidden;
+    padding: 70px 20px;
   }
-  .mid-cta::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle at 50% 0%, rgba(10,127,212,0.2) 0%, transparent 60%);
-  }
-  .mid-cta > * { position: relative; z-index: 1; }
-  .mid-cta .container { position: relative; z-index: 1; }
 
   .mid-cta-icon {
-    font-size: 52px;
-    margin-bottom: 18px;
+    font-size: 48px;
+    margin-bottom: 16px;
     animation: float 3s ease-in-out infinite;
     display: block;
   }
+
   .cta-title {
-    font-family: 'Noto Sans Bengali', sans-serif;
-    font-size: clamp(24px, 4.5vw, 40px);
+    font-size: clamp(22px, 4vw, 36px);
     font-weight: 800;
-    color: white;
-    margin-bottom: 10px;
+    color: var(--text);
+    margin-bottom: 8px;
     line-height: 1.3;
   }
   .cta-urgent { color: var(--warm); }
-  .cta-sub { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 36px; }
+
+  .cta-sub {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 32px;
+  }
 
   .cta-buttons {
     display: flex;
@@ -944,36 +823,33 @@
     margin-bottom: 20px;
   }
 
-  /* override btn-secondary for dark sections */
-  .mid-cta .btn-secondary {
-    background: rgba(255,255,255,0.1);
-    color: white;
-    border: 1.5px solid rgba(255,255,255,0.3);
+  .cta-phone {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    transition: all 0.2s;
   }
-  .mid-cta .btn-secondary:hover {
-    background: rgba(255,255,255,0.18);
-  }
+  .cta-phone:hover { color: var(--primary-dark); }
 
   /* ─── FAQ ─── */
-  .faq-section { background: var(--off-white); }
   .faq-list { max-width: 720px; margin: 0 auto; }
 
   .faq-item {
-    background: white;
-    border-radius: var(--radius-sm);
-    margin-bottom: 10px;
-    border: 1.5px solid var(--grey-100);
+    border-bottom: 1.5px solid var(--grey-100);
     overflow: hidden;
-    transition: border-color 0.2s;
   }
-  .faq-item.active { border-color: rgba(10,127,212,0.25); }
 
   .faq-question {
     width: 100%;
     background: none;
     border: none;
     text-align: left;
-    padding: 18px 20px;
+    padding: 20px 0;
     font-size: 15px;
     font-weight: 600;
     color: var(--text);
@@ -981,25 +857,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 14px;
-    font-family: 'Hind Siliguri', sans-serif;
+    gap: 12px;
+    font-family: 'Sora', sans-serif;
     transition: color 0.2s;
   }
-  .faq-question:hover { color: var(--blue); }
+  .faq-question:hover { color: var(--primary); }
 
   .faq-icon {
-    width: 30px; height: 30px;
-    min-width: 30px;
-    background: var(--grey-50);
+    width: 28px; height: 28px;
+    min-width: 28px;
+    background: var(--primary-light);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--blue);
+    color: var(--primary);
     font-size: 11px;
     transition: all 0.3s;
-    border: 1px solid var(--grey-100);
   }
+
   .faq-answer {
     font-size: 14px;
     color: var(--text-light);
@@ -1007,49 +883,45 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.3s ease;
-    padding: 0 20px;
   }
   .faq-answer.open {
-    max-height: 220px;
-    padding-bottom: 18px;
+    max-height: 200px;
+    padding-bottom: 16px;
   }
   .faq-item.active .faq-icon {
-    background: var(--blue);
+    background: var(--primary);
     color: white;
-    border-color: var(--blue);
     transform: rotate(45deg);
   }
-  .faq-item.active .faq-question { color: var(--blue); }
 
   /* ─── FOOTER ─── */
   footer {
-    background: var(--navy);
+    background: var(--grey-800);
     color: white;
-    padding: 52px 20px 28px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 50px 20px 30px;
   }
+
   .footer-grid {
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 44px;
+    gap: 40px;
     padding-bottom: 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    margin-bottom: 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 30px;
   }
+
   .footer-brand .logo {
     width: 44px; height: 44px;
-    background: linear-gradient(135deg, var(--blue), var(--cyan));
-    border-radius: 11px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Sora', sans-serif;
     font-weight: 800;
     font-size: 14px;
-    margin-bottom: 14px;
-    box-shadow: 0 4px 16px rgba(10,127,212,0.4);
+    margin-bottom: 12px;
   }
   .footer-brand .name {
     font-size: 18px;
@@ -1058,56 +930,57 @@
   }
   .footer-brand .tagline {
     font-size: 13px;
-    opacity: 0.5;
-    margin-bottom: 22px;
-    line-height: 1.65;
+    opacity: 0.6;
+    margin-bottom: 20px;
+    line-height: 1.6;
   }
+
   .footer-contact-item {
     display: flex;
     align-items: center;
-    gap: 9px;
-    margin-bottom: 12px;
-    font-size: 13.5px;
-    opacity: 0.7;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    opacity: 0.8;
     text-decoration: none;
     color: white;
     transition: opacity 0.2s;
   }
   .footer-contact-item:hover { opacity: 1; }
-  .footer-contact-item i { color: var(--cyan); width: 14px; }
+  .footer-contact-item i { color: var(--accent); }
 
   .footer-heading {
-    font-family: 'Sora', sans-serif;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    opacity: 0.4;
-    margin-bottom: 18px;
+    opacity: 0.5;
+    margin-bottom: 16px;
   }
+
   .footer-links { list-style: none; }
-  .footer-links li { margin-bottom: 11px; }
+  .footer-links li { margin-bottom: 10px; }
   .footer-links a {
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.7);
     text-decoration: none;
-    font-size: 13.5px;
+    font-size: 13px;
     transition: color 0.2s;
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 6px;
   }
-  .footer-links a:hover { color: var(--cyan); }
-  .footer-links i { font-size: 9px; color: var(--cyan); opacity: 0.6; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-links i { font-size: 10px; color: var(--accent); opacity: 0.7; }
 
   .footer-hours .hour-row {
     display: flex;
     justify-content: space-between;
-    font-size: 13px;
-    margin-bottom: 10px;
-    opacity: 0.65;
+    font-size: 12px;
+    margin-bottom: 8px;
+    opacity: 0.7;
   }
   .footer-hours .hour-row .day { font-weight: 600; }
-  .footer-hours .hour-row .open { color: var(--cyan); opacity: 1; }
+  .footer-hours .hour-row .open { color: var(--accent); opacity: 1; }
 
   .footer-bottom {
     max-width: 1100px;
@@ -1116,7 +989,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
-    opacity: 0.4;
+    opacity: 0.5;
     flex-wrap: wrap;
     gap: 8px;
   }
@@ -1132,6 +1005,7 @@
     align-items: flex-end;
     gap: 8px;
   }
+
   .float-whatsapp-btn {
     width: 60px; height: 60px;
     background: var(--whatsapp);
@@ -1148,74 +1022,70 @@
   .float-whatsapp-btn svg { width: 30px; height: 30px; fill: white; }
 
   .float-tooltip {
-    background: var(--navy);
-    color: white;
+    background: white;
+    color: var(--text);
     font-size: 12px;
     font-weight: 600;
-    padding: 7px 13px;
+    padding: 6px 12px;
     border-radius: 20px;
-    box-shadow: var(--shadow-dark);
+    box-shadow: var(--shadow-md);
     opacity: 0;
     transition: opacity 0.2s;
     pointer-events: none;
     white-space: nowrap;
-    border: 1px solid rgba(255,255,255,0.1);
   }
   .float-whatsapp:hover .float-tooltip { opacity: 1; }
 
+  /* ─── AC ILLUSTRATION (pure CSS/SVG) ─── */
+  .ac-unit {
+    width: 240px;
+    height: 160px;
+  }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 768px) {
-    .hero-bg {
-  background-position: 25% center;
-}
-    nav { padding: 0 14px; height: 58px; }
-    .hero { padding-top: 58px; }
-    .hero-container {
-      padding: 40px 20px 60px;
-      min-height: calc(100svh - 58px);
-    }
+    nav { padding: 0 14px; }
     .nav-name { display: none; }
+
+    .hero-visual { display: none; }
 
     .trust-bar-inner {
       grid-template-columns: repeat(2, 1fr);
-      gap: 0;
+      gap: 12px;
     }
-    .trust-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 14px 8px; }
-    .trust-stat:nth-child(1), .trust-stat:nth-child(2) { border-right: 1px solid rgba(255,255,255,0.07); }
-    .trust-stat:nth-child(3), .trust-stat:nth-child(4) { border-bottom: none; }
 
-    .steps { grid-template-columns: 1fr; gap: 24px; }
+    .steps {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
     .steps::before { display: none; }
 
-    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
 
-    .services-grid, .why-grid, .testimonials { grid-template-columns: 1fr; }
+    .services-grid, .why-grid, .testimonials {
+      grid-template-columns: 1fr;
+    }
 
-    section { padding: 52px 16px; }
+    section { padding: 50px 16px; }
 
-    .hero-buttons { flex-direction: column; }
-    .btn-primary, .btn-secondary { justify-content: center; width: 100%; }
+    .hero-container { padding: 50px 16px 60px; }
 
-    .hero-headline { font-size: clamp(30px, 9vw, 46px); }
-
-    .rating-banner { padding: 26px 20px; }
-    .rating-banner .big-rating { font-size: 52px; }
-
-    .mid-cta { padding: 56px 16px; }
-    .cta-buttons { flex-direction: column; align-items: stretch; }
-    .cta-buttons .btn-primary,
-    .cta-buttons .btn-secondary { width: 100%; justify-content: center; }
-
-    .float-whatsapp { bottom: 16px; right: 16px; }
-    .float-whatsapp-btn { width: 54px; height: 54px; }
-
-    .guarantee-banner { flex-direction: column; gap: 8px; }
+    .hero-buttons {
+      flex-direction: column;
+    }
+    .btn-primary, .btn-secondary {
+      justify-content: center;
+    }
   }
 
   @media (max-width: 480px) {
-    .trust-bar-inner { grid-template-columns: repeat(2, 1fr); }
-    .hero-trust-row { gap: 12px; font-size: 12px; }
-    .trust-stat .number { font-size: 18px; }
+    .trust-bar-inner {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .cta-buttons { flex-direction: column; align-items: center; }
   }
 </style>
 </head>
@@ -1245,24 +1115,23 @@
 
 <!-- ─── HERO ─── -->
 <section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow-2"></div>
+  <div class="hero-bg-circle hero-bg-circle-1"></div>
+  <div class="hero-bg-circle hero-bg-circle-2"></div>
 
   <div class="hero-container">
-    <div class="hero-badge animate-fadeup">
+    <div class="hero-badge">
       <span class="dot"></span>
       AC নষ্ট? টেকনিশিয়ান আপনার বাসায় — ঢাকার দ্রুততম সার্ভিস
     </div>
 
     <h1 class="hero-headline">
-      <span class="urgent">AC নষ্ট?</span>
+      <span class="urgent">AC নষ্ট?</span><br>
       <span class="highlight">৩০–৬০ মিনিটে</span> টেকনিশিয়ান<br>
       আপনার বাসায়
     </h1>
 
     <p class="hero-sub animate-fadeup delay-2">
-      ঢাকার বিশ্বস্ত AC সার্ভিস • দ্রুত সার্ভিস • নির্ভরযোগ্য টেকনিশিয়ান
+      ঢাকার বিশ্বস্ত AC সার্ভিস — ১৫+ বছরের অভিজ্ঞতা, সার্টিফাইড টেকনিশিয়ান, ট্রান্সপারেন্ট মূল্য, ১৫ দিনের ওয়ারেন্টি।
     </p>
 
     <div class="hero-rating animate-fadeup delay-3">
@@ -1272,21 +1141,62 @@
     </div>
 
     <div class="hero-buttons">
-      <a href="https://wa.me/8801704934190?text=আমার%20AC%20নষ্ট%20হয়েছে,%20দ্রুত%20সার্ভিস%20দরকার।" class="btn-primary animate-fadeup delay-4" target="_blank" rel="noopener">
+      <a href="https://wa.me/8801704934190?text=আমার%20AC%20নষ্ট%20হয়েছে,%20দ্রুত%20সার্ভিস%20দরকার।" class="btn-primary" target="_blank" rel="noopener">
         <i class="fab fa-whatsapp" style="font-size:18px"></i>
         WhatsApp করুন
       </a>
-      <a href="tel:+8801704-934190" class="btn-secondary animate-fadeup delay-4">
+      <a href="tel:+8801704-934190" class="btn-secondary">
         <i class="fas fa-phone"></i>
         এখনই Call করুন
       </a>
     </div>
 
-    <div class="hero-trust-row">
-      <span><i class="fas fa-check-circle"></i> সেম-ডে সার্ভিস</span>
-      <span><i class="fas fa-check-circle"></i> কোনো হিডেন চার্জ নেই</span>
-      <span><i class="fas fa-check-circle"></i> ৭ দিন উপলব্ধ</span>
+    <div class="animate-fadeup delay-5" style="display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--text-light);">
+      <span style="display:flex;align-items:center;gap:5px;"><i class="fas fa-check-circle" style="color:var(--accent)"></i> সেম-ডে সার্ভিস</span>
+      <span style="display:flex;align-items:center;gap:5px;"><i class="fas fa-check-circle" style="color:var(--accent)"></i> কোনো হিডেন চার্জ নেই</span>
+      <span style="display:flex;align-items:center;gap:5px;"><i class="fas fa-check-circle" style="color:var(--accent)"></i> ৭ দিন উপলব্ধ</span>
     </div>
+  </div>
+
+  <!-- AC Unit SVG illustration -->
+  <div class="hero-visual">
+    <svg class="ac-unit" viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+      <!-- AC body -->
+      <rect x="10" y="30" width="260" height="120" rx="16" fill="white" stroke="#C3D9EF" stroke-width="1.5" filter="drop-shadow(0 20px 40px rgba(10,127,212,0.15))"/>
+      <!-- Top stripe -->
+      <rect x="10" y="30" width="260" height="28" rx="16" fill="url(#acGrad)"/>
+      <rect x="10" y="44" width="260" height="14" fill="url(#acGrad)"/>
+      <!-- Vents -->
+      <rect x="30" y="80" width="220" height="6" rx="3" fill="#C3D9EF"/>
+      <rect x="30" y="94" width="220" height="6" rx="3" fill="#C3D9EF"/>
+      <rect x="30" y="108" width="220" height="6" rx="3" fill="#C3D9EF"/>
+      <rect x="30" y="122" width="220" height="6" rx="3" fill="#C3D9EF"/>
+      <!-- Panel -->
+      <rect x="170" y="42" width="80" height="16" rx="6" fill="rgba(255,255,255,0.25)"/>
+      <!-- LED indicators -->
+      <circle cx="186" cy="50" r="4" fill="#00C4A7" opacity="0.9"/>
+      <circle cx="202" cy="50" r="4" fill="#FBBF24" opacity="0.9"/>
+      <circle cx="218" cy="50" r="4" fill="#fff" opacity="0.5"/>
+      <!-- Brand text -->
+      <text x="30" y="52" font-family="Sora,sans-serif" font-weight="800" font-size="12" fill="white" letter-spacing="2">ST AC SERVICE</text>
+      <!-- Cool air waves -->
+      <path d="M50 145 Q80 135 110 145 Q140 155 170 145 Q200 135 230 145" stroke="url(#waveGrad)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+      <path d="M60 158 Q90 148 120 158 Q150 168 180 158 Q210 148 240 158" stroke="url(#waveGrad)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.4"/>
+      <!-- Snowflakes floating -->
+      <text x="60" y="175" font-size="14" fill="#0A7FD4" opacity="0.4">❄</text>
+      <text x="130" y="172" font-size="10" fill="#00C4A7" opacity="0.5">❄</text>
+      <text x="200" y="176" font-size="12" fill="#0A7FD4" opacity="0.35">❄</text>
+      <defs>
+        <linearGradient id="acGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#0A7FD4"/>
+          <stop offset="100%" stop-color="#00C4A7"/>
+        </linearGradient>
+        <linearGradient id="waveGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#0A7FD4"/>
+          <stop offset="100%" stop-color="#00C4A7"/>
+        </linearGradient>
+      </defs>
+    </svg>
   </div>
 </section>
 
@@ -1355,21 +1265,19 @@
         <p class="service-desc">বাসা বদল বা রুম পরিবর্তন — AC সতর্কতার সাথে খুলে নতুন জায়গায় লাগানো।</p>
         <span class="service-price">৳ ২,৯৯৯ থেকে শুরু</span>
       </div>
-      <div class="service-card scroll-reveal" style="border-color:rgba(255,107,53,0.35);border-width:2px;">
+      <div class="service-card scroll-reveal" style="border-color:var(--warm);border-width:2px;">
         <span class="service-badge-emergency">২৪/৭ জরুরি</span>
-        <div class="service-icon" style="background:rgba(255,107,53,0.1);color:var(--warm);border-color:rgba(255,107,53,0.2);"><i class="fas fa-exclamation-triangle"></i></div>
+        <div class="service-icon" style="background:var(--warm-light);color:var(--warm);"><i class="fas fa-exclamation-triangle"></i></div>
         <div class="service-name">ইমার্জেন্সি AC রিপেয়ার</div>
         <p class="service-desc">রাত-দিন যেকোনো সময় — গরমে AC নষ্ট? আমরা ২৪ ঘণ্টা আপনার পাশে।</p>
-        <span class="service-price" style="background:rgba(255,107,53,0.08);color:var(--warm);border-color:rgba(255,107,53,0.2);">৳ ১,০০০ থেকে শুরু</span>
+        <span class="service-price" style="background:var(--warm-light);color:var(--warm);">৳ ১,০০০ থেকে শুরু</span>
       </div>
     </div>
-
-    <div class="guarantee-banner scroll-reveal">
-      <i class="fas fa-lock"></i>
-      <span><strong>কাজ শুরু করার আগে ফাইনাল মূল্য জানানো হবে</strong> — আপনার অনুমতি ছাড়া কোনো কাজ নয়।</span>
+    <div class="scroll-reveal" style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius-sm);padding:14px 20px;margin-top:28px;display:flex;align-items:center;gap:10px;max-width:620px;">
+      <i class="fas fa-lock" style="color:var(--accent);font-size:16px;min-width:16px;"></i>
+      <span style="font-size:13px;color:var(--grey-800);line-height:1.6;"><strong>কাজ শুরু করার আগে ফাইনাল মূল্য জানানো হবে</strong> — আপনার অনুমতি ছাড়া কোনো কাজ নয়।</span>
     </div>
-
-    <div style="text-align:center;margin-top:32px;" class="scroll-reveal">
+    <div style="text-align:center;margin-top:28px;" class="scroll-reveal">
       <a href="https://wa.me/8801704934190?text=আমি%20AC%20সার্ভিস%20বুক%20করতে%20চাই।" class="btn-primary" target="_blank" rel="noopener" style="display:inline-flex;">
         <i class="fab fa-whatsapp" style="font-size:18px"></i>
         এখনই WhatsApp করুন
@@ -1379,7 +1287,7 @@
 </section>
 
 <!-- ─── WHY CHOOSE US ─── -->
-<section class="why-section" id="about">
+<section id="about">
   <div class="container">
     <div class="scroll-reveal">
       <div class="section-label">কেন আমরা?</div>
@@ -1435,7 +1343,7 @@
 
 <!-- ─── HOW IT WORKS ─── -->
 <section class="how-it-works" id="how">
-  <div class="container" style="position:relative;z-index:1;">
+  <div class="container">
     <div class="scroll-reveal" style="text-align:center;">
       <div class="section-label">কীভাবে কাজ করে</div>
       <h2 class="section-title">মাত্র <span class="accent">৩টি সহজ ধাপে</span> সমাধান</h2>
@@ -1467,7 +1375,7 @@
         <p class="step-desc">কাজ দেখুন, সন্তুষ্ট হলে পেমেন্ট করুন। ক্যাশ বা বিকাশ — যেভাবে সুবিধা।</p>
       </div>
     </div>
-    <div style="text-align:center;margin-top:44px;" class="scroll-reveal">
+    <div style="text-align:center;margin-top:40px;" class="scroll-reveal">
       <a href="https://wa.me/8801704934190?text=আমি%20AC%20সার্ভিস%20নিতে%20চাই" class="btn-primary" target="_blank" rel="noopener" style="display:inline-flex;">
         <i class="fab fa-whatsapp" style="font-size:18px"></i>
         এখনই শুরু করুন
@@ -1477,7 +1385,7 @@
 </section>
 
 <!-- ─── SOCIAL PROOF ─── -->
-<section class="reviews-section" id="reviews">
+<section id="reviews">
   <div class="container">
     <div class="scroll-reveal">
       <div class="section-label">কাস্টমার রিভিউ</div>
@@ -1496,7 +1404,7 @@
           <div class="test-avatar">মর</div>
           <div>
             <div class="test-name">মোহাম্মদ রফিকুল ইসলাম</div>
-            <div class="test-loc"><i class="fas fa-map-marker-alt" style="color:var(--blue);font-size:10px;margin-right:3px;"></i>মিরপুর ১০, ঢাকা</div>
+            <div class="test-loc"><i class="fas fa-map-marker-alt" style="color:var(--primary);font-size:10px;margin-right:3px;"></i>মিরপুর ১০, ঢাকা</div>
           </div>
         </div>
       </div>
@@ -1507,7 +1415,7 @@
           <div class="test-avatar">নু</div>
           <div>
             <div class="test-name">নুসরাত জাহান</div>
-            <div class="test-loc"><i class="fas fa-map-marker-alt" style="color:var(--blue);font-size:10px;margin-right:3px;"></i>ধানমন্ডি, ঢাকা</div>
+            <div class="test-loc"><i class="fas fa-map-marker-alt" style="color:var(--primary);font-size:10px;margin-right:3px;"></i>ধানমন্ডি, ঢাকা</div>
           </div>
         </div>
       </div>
@@ -1518,7 +1426,7 @@
           <div class="test-avatar">কা</div>
           <div>
             <div class="test-name">কামরুল হাসান করিম</div>
-            <div class="test-loc"><i class="fas fa-map-marker-alt" style="color:var(--blue);font-size:10px;margin-right:3px;"></i>বসুন্ধরা আ/এ, ঢাকা</div>
+            <div class="test-loc"><i class="fas fa-map-marker-alt" style="color:var(--primary);font-size:10px;margin-right:3px;"></i>বসুন্ধরা আ/এ, ঢাকা</div>
           </div>
         </div>
       </div>
@@ -1534,24 +1442,22 @@
       <h2 class="section-title">আমরা যেসব এলাকায় <span class="accent">সার্ভিস দিই</span></h2>
       <p class="section-sub">ঢাকার সব প্রধান এলাকায় আমাদের দ্রুত সার্ভিস পাওয়া যায়।</p>
     </div>
-
-    <div class="areas-tags">
-      <div class="area-tag"><i class="fas fa-map-marker-alt"></i> ওয়ারী</div>
-      <div class="area-tag"><i class="fas fa-map-marker-alt"></i> মতিঝিল</div>
-      <div class="area-tag"><i class="fas fa-map-marker-alt"></i> মিরাজীবাগ</div>
-      <div class="area-tag"><i class="fas fa-map-marker-alt"></i> কেরানীগঞ্জ</div>
-      <div class="area-tag"><i class="fas fa-map-marker-alt"></i> নারায়ণগঞ্জ</div>
-      <div class="area-tag"><i class="fas fa-map-marker-alt"></i> যাত্রাবাড়ী</div>
-      <div class="area-tag"><i class="fas fa-map-marker-alt"></i> ডেমরা</div>
-      <div class="area-tag"><i class="fas fa-map-marker-alt"></i> শান্তিনগর</div>
-      <div class="area-tag"><i class="fas fa-map-marker-alt"></i> পুরান ঢাকা</div>
-      <div class="area-tag"><i class="fas fa-map-marker-alt"></i> গেন্ডারিয়া</div>
-      <div class="area-tag"><i class="fas fa-map-marker-alt"></i> কাকরাইল</div>
-    </div>
-
-    <div style="margin-top:26px;font-size:14px;color:var(--text-light);" class="scroll-reveal">
-      <i class="fas fa-info-circle" style="color:var(--blue)"></i>
-      আপনার এলাকা তালিকায় নেই? <a href="https://wa.me/8801704934190" style="color:var(--blue);font-weight:600;text-decoration:none;" target="_blank">WhatsApp করুন</a> — আমরা সম্ভাব্য সমাধান জানাব।
+    
+<div class="areas-tags">
+  <div class="area-tag"><i class="fas fa-map-marker-alt"></i> ওয়ারী</div>
+  <div class="area-tag"><i class="fas fa-map-marker-alt"></i> মতিঝিল</div>
+  <div class="area-tag"><i class="fas fa-map-marker-alt"></i> মিরাজীবাগ</div>
+  <div class="area-tag"><i class="fas fa-map-marker-alt"></i> কেরানীগঞ্জ</div>
+  <div class="area-tag"><i class="fas fa-map-marker-alt"></i> নারায়ণগঞ্জ</div>
+  <div class="area-tag"><i class="fas fa-map-marker-alt"></i> যাত্রাবাড়ী</div>
+  <div class="area-tag"><i class="fas fa-map-marker-alt"></i> ডেমরা</div>
+  <div class="area-tag"><i class="fas fa-map-marker-alt"></i> শান্তিনগর</div>
+  <div class="area-tag"><i class="fas fa-map-marker-alt"></i> পুরান ঢাকা</div>
+  <div class="area-tag"><i class="fas fa-map-marker-alt"></i> গেন্ডারিয়া</div>
+  <div class="area-tag"><i class="fas fa-map-marker-alt"></i> কাকরাইল</div>
+    <div style="margin-top:24px;font-size:14px;color:var(--text-light);" class="scroll-reveal">
+      <i class="fas fa-info-circle" style="color:var(--primary)"></i>
+      আপনার এলাকা তালিকায় নেই? <a href="https://wa.me/8801704934190" style="color:var(--primary);font-weight:600;text-decoration:none;" target="_blank">WhatsApp করুন</a> — আমরা সম্ভাব্য সমাধান জানাব।
     </div>
   </div>
 </section>
@@ -1574,11 +1480,12 @@
         সরাসরি Call করুন
       </a>
     </div>
+    
   </div>
 </section>
 
 <!-- ─── FAQ ─── -->
-<section class="faq-section" id="faq">
+<section id="faq">
   <div class="container">
     <div class="scroll-reveal" style="text-align:center;max-width:600px;margin:0 auto 48px;">
       <div class="section-label">সাধারণ প্রশ্ন</div>
@@ -1648,7 +1555,7 @@
         <i class="fab fa-whatsapp"></i> WhatsApp করুন
       </a>
       <div class="footer-contact-item">
-        <i class="fas fa-map-marker-alt"></i> ২৮/২ বানিয়ানগর, মুরগীটোলা মোড়, গেণ্ডারিয়া, ঢাকা — ১২০৪
+        <i class="fas fa-map-marker-alt"></i> ২৮/২ বানিয়ানগর, মুরগীটোলা মোড়, গেণ্ডারিয়া, ঢাকা — ১২০৪
       </div>
     </div>
     <div>
@@ -1669,9 +1576,9 @@
         <div class="hour-row"><span class="day">শুক্রবার</span><span class="open">৯টা — ৯টা</span></div>
         <div class="hour-row"><span class="day">ইমার্জেন্সি</span><span class="open">২৪/৭</span></div>
       </div>
-      <div style="margin-top:22px;">
+      <div style="margin-top:20px;">
         <div class="footer-heading">এলাকাসমূহ</div>
-        <div style="font-size:12px;opacity:0.5;line-height:2;">
+        <div style="font-size:12px;opacity:0.6;line-height:1.9;">
           গেন্ডারিয়া • ওয়ারী • কাকরাইল<br>
           মতিঝিল • শান্তিনগর • পুরান ঢাকা<br>
           মিরাজীবাগ • যাত্রাবাড়ী • ডেমরা<br>
@@ -1699,27 +1606,28 @@
 <script>
   // Snowflakes
   const snow = document.getElementById('snowflakes');
-  for (let i = 0; i < 16; i++) {
+  for (let i = 0; i < 18; i++) {
     const el = document.createElement('div');
     el.classList.add('snowflake');
     el.innerHTML = '❄';
     el.style.left = Math.random() * 100 + 'vw';
-    el.style.animationDuration = (10 + Math.random() * 14) + 's';
-    el.style.animationDelay = (Math.random() * 12) + 's';
-    el.style.fontSize = (7 + Math.random() * 12) + 'px';
+    el.style.animationDuration = (8 + Math.random() * 12) + 's';
+    el.style.animationDelay = (Math.random() * 10) + 's';
+    el.style.fontSize = (8 + Math.random() * 14) + 'px';
+    el.style.opacity = 0.15 + Math.random() * 0.3;
     snow.appendChild(el);
   }
 
   // Scroll reveal
   const revealEls = document.querySelectorAll('.scroll-reveal');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+    entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('revealed'), 60);
+        setTimeout(() => entry.target.classList.add('revealed'), 80);
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.1 });
   revealEls.forEach(el => observer.observe(el));
 
   // FAQ accordion
@@ -1727,24 +1635,26 @@
     const item = btn.parentElement;
     const answer = item.querySelector('.faq-answer');
     const isOpen = item.classList.contains('active');
+
+    // Close all
     document.querySelectorAll('.faq-item').forEach(i => {
       i.classList.remove('active');
       i.querySelector('.faq-answer').classList.remove('open');
     });
+
+    // Open clicked if it was closed
     if (!isOpen) {
       item.classList.add('active');
       answer.classList.add('open');
     }
   }
 
-  // Navbar scroll effect
+  // Navbar scroll shadow
   window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
-    if (window.scrollY > 30) {
-      nav.style.background = 'rgba(11,30,51,0.99)';
-    } else {
-      nav.style.background = 'rgba(11,30,51,0.97)';
-    }
+    nav.style.boxShadow = window.scrollY > 20
+      ? '0 4px 30px rgba(10,127,212,0.15)'
+      : '0 2px 20px rgba(10,127,212,0.08)';
   });
 </script>
 </body>
