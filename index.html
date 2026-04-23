@@ -205,14 +205,36 @@
 
   /* ─── HERO ─── */
   .hero {
-    min-height: 100vh;
-    padding-top: 64px;
-    background: linear-gradient(160deg, #EBF6FF 0%, #F0FBFA 40%, #F7FBFF 100%);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
+  min-height: 100vh;
+  padding-top: 64px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(to right, rgba(15,38,57,0.85), rgba(15,38,57,0.4)),
+    url('https://i.ibb.co/0Ryfv6FP/hero.png') no-repeat 70% center/cover;
+}
+  .hero-headline,
+.hero-sub,
+.hero-rating,
+.hero-badge,
+.hero span,
+.hero p {
+  color: white !important;
+}
+
+.hero-rating {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.hero-badge {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
 
   /* Snowflake particles */
   .snowflake {
@@ -1159,45 +1181,7 @@
   </div>
 
   <!-- AC Unit SVG illustration -->
-  <div class="hero-visual">
-    <svg class="ac-unit" viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
-      <!-- AC body -->
-      <rect x="10" y="30" width="260" height="120" rx="16" fill="white" stroke="#C3D9EF" stroke-width="1.5" filter="drop-shadow(0 20px 40px rgba(10,127,212,0.15))"/>
-      <!-- Top stripe -->
-      <rect x="10" y="30" width="260" height="28" rx="16" fill="url(#acGrad)"/>
-      <rect x="10" y="44" width="260" height="14" fill="url(#acGrad)"/>
-      <!-- Vents -->
-      <rect x="30" y="80" width="220" height="6" rx="3" fill="#C3D9EF"/>
-      <rect x="30" y="94" width="220" height="6" rx="3" fill="#C3D9EF"/>
-      <rect x="30" y="108" width="220" height="6" rx="3" fill="#C3D9EF"/>
-      <rect x="30" y="122" width="220" height="6" rx="3" fill="#C3D9EF"/>
-      <!-- Panel -->
-      <rect x="170" y="42" width="80" height="16" rx="6" fill="rgba(255,255,255,0.25)"/>
-      <!-- LED indicators -->
-      <circle cx="186" cy="50" r="4" fill="#00C4A7" opacity="0.9"/>
-      <circle cx="202" cy="50" r="4" fill="#FBBF24" opacity="0.9"/>
-      <circle cx="218" cy="50" r="4" fill="#fff" opacity="0.5"/>
-      <!-- Brand text -->
-      <text x="30" y="52" font-family="Sora,sans-serif" font-weight="800" font-size="12" fill="white" letter-spacing="2">ST AC SERVICE</text>
-      <!-- Cool air waves -->
-      <path d="M50 145 Q80 135 110 145 Q140 155 170 145 Q200 135 230 145" stroke="url(#waveGrad)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6"/>
-      <path d="M60 158 Q90 148 120 158 Q150 168 180 158 Q210 148 240 158" stroke="url(#waveGrad)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.4"/>
-      <!-- Snowflakes floating -->
-      <text x="60" y="175" font-size="14" fill="#0A7FD4" opacity="0.4">❄</text>
-      <text x="130" y="172" font-size="10" fill="#00C4A7" opacity="0.5">❄</text>
-      <text x="200" y="176" font-size="12" fill="#0A7FD4" opacity="0.35">❄</text>
-      <defs>
-        <linearGradient id="acGrad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#0A7FD4"/>
-          <stop offset="100%" stop-color="#00C4A7"/>
-        </linearGradient>
-        <linearGradient id="waveGrad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#0A7FD4"/>
-          <stop offset="100%" stop-color="#00C4A7"/>
-        </linearGradient>
-      </defs>
-    </svg>
-  </div>
+ 
 </section>
 
 <!-- ─── TRUST BAR ─── -->
