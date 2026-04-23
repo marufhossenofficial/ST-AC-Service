@@ -217,6 +217,11 @@
     background: var(--navy);
     display: flex;
     align-items: stretch;
+    @media (max-width: 768px) {
+  .hero {
+    min-height: 85vh;
+  }
+}
   }
 
   /* Full background image with dark overlay */
@@ -232,9 +237,10 @@
     inset: 0;
     background: linear-gradient(
       105deg,
-    rgba(11,30,51,0.96) 0%,
-    rgba(11,30,51,0.88) 45%,
-    rgba(11,30,51,0.55) 100%
+    rgba(11,30,51,0.92) 0%,
+    rgba(11,30,51,0.75) 40%,
+    rgba(11,30,51,0.25) 70%,
+    rgba(11,30,51,0.05) 100%
     );
   }
 
@@ -1249,7 +1255,7 @@
     </h1>
 
     <p class="hero-sub animate-fadeup delay-2">
-      ঢাকার বিশ্বস্ত AC সার্ভিস — ১৫+ বছরের অভিজ্ঞতা, সার্টিফাইড টেকনিশিয়ান, ট্রান্সপারেন্ট মূল্য, ১৫ দিনের ওয়ারেন্টি।
+      ঢাকার বিশ্বস্ত AC সার্ভিস • দ্রুত সার্ভিস • নির্ভরযোগ্য টেকনিশিয়ান
     </p>
 
     <div class="hero-rating animate-fadeup delay-3">
